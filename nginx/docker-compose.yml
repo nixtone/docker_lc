@@ -6,6 +6,12 @@ services:
   nginx:
     # Тот образ который будет искаться на dockerHub, если его нет локально
     image: nginx:latest
-    # Порт конкретно для этого контейнера
+    # транслирование локальных файлов в контейнер
+    volumes:
+      - ./:/var/www/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      # Порт конкретно для этого контейнера
     ports:
       - "8876:80"
+    # Свое название сервиса (вместо "nginx-nginx-1")
+    container_name: app_nginx

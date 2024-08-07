@@ -42,8 +42,13 @@ __Виртуальная машина__ - ОС с ресурсами
 
 # Установленные образы  
 
-Создается "docker-compose.yml"
+Создается "docker-compose.yml"  
 
 [nginx](https://hub.docker.com/_/nginx)  
-`docker-compose up -d`  
+`docker-compose up -d` // запуск сервиса  
 Просмотр запущенного nginx: http://localhost:8876/  
+
+"conf.d" общепринятое названия для конфигов  
+`docked exec -it nginx-nginx-1 bash` // запуск сервиса от контейнера  
+`cd etc/nginx/conf.d/` // увидим общий конфиг  
+`docker-compose down` // останавливаем сервис (если обновили yml конфиг и нужно подхватить изменения, потом up)  
