@@ -38,3 +38,12 @@ __Виртуальная машина__ - ОС с ресурсами
 - ПКМ на Docker в трее, убедиться что выставлено "Switch to Windows containers...", может быть выставлено "to Linux".  
 - Проверить успешность установки. Выполнить:  
   `docker`, `docker-compose` выдаст справку. Можно еще `docker run hello-world`  
+
+
+# Установленные образы  
+
+Создается "docker-compose.yml"
+
+[nginx](https://hub.docker.com/_/nginx)  
+`docker-compose up -d`  
+Просмотр запущенного nginx: http://localhost:8876/  
