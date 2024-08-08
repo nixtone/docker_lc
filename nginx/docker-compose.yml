@@ -10,8 +10,16 @@ services:
     volumes:
       - ./:/var/www/
       - ./nginx/conf.d/:/etc/nginx/conf.d/
-      # Порт конкретно для этого контейнера
+    # Порт конкретно для этого контейнера
     ports:
       - "8876:80"
+    # Сервис "nginx" должен запускаться только когда запускается сервис "php"
+    depends_on:
+      - php
     # Свое название сервиса (вместо "nginx-nginx-1")
     container_name: app_nginx
+
+  php:
+    image: php:8.3-fpm
+    volumes:
+      - ./:/var/www

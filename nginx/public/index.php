@@ -7,7 +7,8 @@
 </head>
 <body>
 
-<p>Тестовая страница index.html</p>
+<p>Тестовая страница index.php</p>
+<pre style="background: #eee; padding: 10px"><?="it works"?></pre>
 
 </body>
 </html>
