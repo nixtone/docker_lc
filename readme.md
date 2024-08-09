@@ -45,6 +45,8 @@ __Виртуальная машина__ - ОС с ресурсами
 Создается "docker-compose.yml"  
 
 [nginx](https://hub.docker.com/_/nginx)  
+[php](https://hub.docker.com/_/php)  
+
 `docker-compose up -d` // запуск сервиса  
 Просмотр запущенного nginx: http://localhost:8876/  
 
@@ -52,3 +54,9 @@ __Виртуальная машина__ - ОС с ресурсами
 `docked exec -it nginx-nginx-1 bash` // запуск сервиса от контейнера  
 `cd etc/nginx/conf.d/` // увидим общий конфиг  
 `docker-compose down` // останавливаем сервис (если обновили yml конфиг и нужно подхватить изменения, потом up)  
+
+### Laravel docker
+
+Иногда отдает ошибку 500, нужно:  
+`docker exec -it project-app bash` // в контейнер можно не заходить  
+В "/var/www" `php artisan key:generate`  
